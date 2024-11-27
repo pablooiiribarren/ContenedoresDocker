@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  mediawiki_latest:
+    image: mediawiki:latest
+    container_name: mediawiki_latest
+    ports:
+      - "8080:80"
+    environment:
+      MEDIAWIKI_DB_HOST: db
+      MEDIAWIKI_DB_NAME: mediawiki_latest
+      MEDIAWIKI_DB_USER: mediawiki_user
+      MEDIAWIKI_DB_PASSWORD: mediawiki_password
+    networks:
+      - mediawiki_net
+
+  mediawiki_1_36_3:
+    image: mediawiki:1.36.3
+    container_name: mediawiki_1_36_3
+    ports:
+      - "8081:80"
+    environment:
+      MEDIAWIKI_DB_HOST: db
+      MEDIAWIKI_DB_NAME: mediawiki_1_36_3
+      MEDIAWIKI_DB_USER: mediawiki_user
+      MEDIAWIKI_DB_PASSWORD: mediawiki_password
+    networks:
+      - mediawiki_net
+
+  mediawiki_1_35_5:
+    image: mediawiki:1.35.5
+    container_name: mediawiki_1_35_5
+    ports:
+      - "8082:80"
+    environment:
+      MEDIAWIKI_DB_HOST: db
+      MEDIAWIKI_DB_NAME: mediawiki_1_35_5
+      MEDIAWIKI_DB_USER: mediawiki_user
+      MEDIAWIKI_DB_PASSWORD: mediawiki_password
+    networks:
+      - mediawiki_net
+
+  db:
+    image: mariadb:10.5
+    container_name: mediawiki_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_USER: mediawiki_user
+      MYSQL_PASSWORD: mediawiki_password
+      MYSQL_DATABASE: mediawiki
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - mediawiki_net
+
+volumes:
+  db_data: {}
+
+networks:
+  mediawiki_net:
+    driver: bridge
