@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:latest
+    container_name: servidor_mysql
+    networks:
+      - red_wp
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: bd_wp
+      MYSQL_USER: user_wp
+      MYSQL_PASSWORD: asdasd
+      MYSQL_ROOT_PASSWORD: asdasd
+
+  wordpress:
+    image: wordpress:latest
+    container_name: servidor_wp
+    networks:
+      - red_wp
+    ports:
+      - "80:80"
+    volumes:
+      - wordpress_data:/var/www/html/wp-content
+    environment:
+      WORDPRESS_DB_HOST: servidor_mysql
+      WORDPRESS_DB_USER: user_wp
+      WORDPRESS_DB_PASSWORD: asdasd
+      WORDPRESS_DB_NAME: bd_wp
+
+volumes:
+  db_data:
+  wordpress_data:
+
+networks:
+  red_wp:
+    driver: bridge
