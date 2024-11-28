@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 
 services:
   db:
@@ -24,10 +24,10 @@ services:
     volumes:
       - wordpress_data:/var/www/html/wp-content
     environment:
-      WORDPRESS_DB_HOST: servidor_mysql
-      WORDPRESS_DB_USER: user_wp
-      WORDPRESS_DB_PASSWORD: asdasd
-      WORDPRESS_DB_NAME: bd_wp
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: example username
+      WORDPRESS_DB_PASSWORD: example password
+      WORDPRESS_DB_NAME: wordpress
 
 volumes:
   db_data:
