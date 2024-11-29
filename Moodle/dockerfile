@@ -1,14 +1,11 @@
 
 FROM php:7.4-apache
 
-RUN apt-get update && apt-get install -y \
-    libzip-dev \
-    unzip \
-    mariadb-client \
-    && docker-php-ext-install zip mysqli pdo_mysql
+RUN apt-get update && apt-get install -y libzip-dev unzip mariadb-client && docker-php-ext-install zip mysqli pdo_mysql
 
 RUN a2enmod rewrite
 
 COPY ./moodle /var/www/html
 
 EXPOSE 80
+
