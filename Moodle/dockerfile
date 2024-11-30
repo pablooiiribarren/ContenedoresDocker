@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install -y libzip-dev unzip mariadb-client && dock
 
 #Instalar la tarea Cron de Unix que funcione Moodle correctamente
 RUN apt-get update && apt-get install -y cron
-CMD ["service","cron","start"]
 
 #Habilitar módulos de Apache
 RUN a2enmod rewrite
