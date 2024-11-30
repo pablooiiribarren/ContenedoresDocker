@@ -1,16 +1,21 @@
 
 FROM php:8.1-apache
 
+#Instalar exstensiones necesarias para Moodle
 RUN apt-get update && apt-get install -y libzip-dev unzip mariadb-client && docker-php-ext-install zip mysqli pdo_mysql
 
+#Instalar la tarea Cron de Unix que funcione Moodle correctamente
 RUN apt-get update &&apt-get install -y cron
 CMD ["service","cron","start"]
 
+#Habilitar módulos de Apache
 RUN a2enmod rewrite
 
 COPY ./moodle /var/www/html
 
+#Permisos correspondientes
 RUN chown -R www-data:www-data /var/www/html
 
+#Exponer puerto 80
 EXPOSE 80
 
