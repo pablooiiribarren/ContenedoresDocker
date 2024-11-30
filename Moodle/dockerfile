@@ -18,4 +18,3 @@ RUN chown -R www-data:www-data /var/www/html
 
 #Exponer puerto 80
 EXPOSE 80
-
