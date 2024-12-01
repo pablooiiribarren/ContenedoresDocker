@@ -14,6 +14,10 @@ COPY ./moodle /var/www/html
 
 #Permisos correspondientes
 RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 777 /var/www
+
+#Eliminar advertencia sobre ServerName
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 #Exponer puerto 80
 EXPOSE 80

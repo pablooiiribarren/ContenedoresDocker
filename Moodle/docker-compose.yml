@@ -25,17 +25,14 @@ services:
       MOODLE_DB_USER: moodle_user
       MOODLE_DB_PASSWORD: moodle_password
       MOODLE_DB_NAME: moodle
-      MOODLE_DATA_DIR: /var/www/moodledata
     ports:
       - "8080:80"
     volumes:
       - moodle_data:/var/www/html
-      - moodledata:/var/www/moodledata
 
 volumes:
   db_data:
   moodle_data:
-  moodledata:
 
 networks:
   moodle_net:
