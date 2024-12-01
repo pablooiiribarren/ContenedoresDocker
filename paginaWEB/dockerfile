@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # Copiamos la carpeta de tu sitio web al directorio de Apache (opcional si no usas volúmenes)
-# COPY ./html /var/www/html
+COPY ./html /var/www/html
 
 # Configuramos permisos para el directorio
 RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
