@@ -18,9 +18,9 @@ services:
       image: mariadb:latest          # Usamos MariaDB como base de datos
       container_name: lamp_db
       environment:
-        MYSQL_DATABASE: web_db       # Nombre de la base de datos
-        MYSQL_USER: web_user         # Usuario
-        MYSQL_PASSWORD: web_password # Contraseña
+        MYSQL_DATABASE: proyectos       # Nombre de la base de datos
+        MYSQL_USER: root         # Usuario
+        MYSQL_PASSWORD: root_password # Contraseña
         MYSQL_ROOT_PASSWORD: root_password
       volumes:
         - db_data:/var/lib/mysql     # Almacenamos los datos de la base de datos
@@ -29,10 +29,10 @@ services:
         - "3306:3306"                # Exponemos el puerto de MySQL
       networks:
         - lamp_net
+
+volumes:
+  db_data:
   
-  volumes:
-    db_data:
-  
-  networks:
-    lamp_net:
-      driver: bridge
+networks:
+  lamp_net:
+    driver: bridge
