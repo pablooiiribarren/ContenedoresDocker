@@ -1,0 +1,141 @@
+
+body {
+  background-color: white;
+}
+
+h3 {
+  margin-top: 50px;
+}
+
+.buscador {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important; 
+}
+
+.error-message {
+  color: red;
+  display: none; /* Inicialmente oculto */
+  margin-top: 10px;
+}
+
+.jumbotron {
+  background-color: lightgrey;
+  padding: 2rem;
+}
+
+.card-container {
+  perspective: 1000px;
+  position: relative;
+}
+
+.mb-4 { 
+  border: none;
+}
+
+.mb-5 {
+  margin-bottom: 0 !important;
+}
+
+.py-5 {
+  margin-bottom: 175px;
+  padding-top: 2rem !important;
+  padding-bottom: 10rem !important;
+}
+
+#projects-container .card {
+  margin-bottom: 20px;
+}
+
+#estudios {
+  margin-top: 50px !important;
+  margin-bottom: 175px !important;
+}
+
+#intereses {
+  margin-top: 350px !important;
+  margin-bottom: 175px !important;
+}
+
+#contacto {
+  margin-top: 50px !important;
+  margin-bottom: 0 !important;
+}
+
+.col-md-4 {
+  text-align: center !important;
+}
+
+.container {
+  padding: 30px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+section .container {
+  padding: 0 !important;
+}
+
+.card-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-container:hover .card-flip {
+  transform: rotateY(180deg);
+}
+
+.card {
+  border: none !important;
+  background-color: white !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.card-img {
+  text-align: center !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  position: absolute !important;
+}
+
+.card-img-top {
+  text-align: center !important;
+  position: relative !important;
+  object-fit: cover !important;
+  padding: 5px;
+  height: 200px;
+  width: 200px;
+}
+
+#intereses .card-img-top {
+  height: 150px;
+  width: 150px;
+}
+
+.bg-light {
+  background-color: white !important;
+  padding-top: 1rem !important;
+}
+
+.front {
+  background-color: white;
+}
+
+.back {
+  background-color: white;
+  transform: rotateY(180deg);
+}
+
+.footer {
+  padding: 2rem;
+  background-color: #f1f1f1;
+}

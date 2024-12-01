@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Agregar Proyecto</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Agregar Proyecto</h2>
+        <form action="anadir_proyecto.php" method="POST">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título del Proyecto</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Introduce el título del proyecto" required>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="4" placeholder="Escribe una breve descripción" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="imagen" class="form-label">Imagen (URL)</label>
+                <input type="url" class="form-control" id="imagen" name="imagen" placeholder="Introduce la URL de la imagen" required>
+            </div>
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" required>
+            </div>
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categoría</label>
+                <textarea class="form-control" id="categoria" name="categoria" rows="3" placeholder="Especifica la categoría" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="tecnologias" class="form-label">Tecnologías</label>
+                <textarea class="form-control" id="tecnologias" name="tecnologias" rows="3" placeholder="Tecnologías utilizadas en el proyecto" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="link" class="form-label">Link al Proyecto</label>
+                <input type="url" class="form-control" id="link" name="link" placeholder="Introduce el enlace al proyecto">
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success">Agregar Proyecto</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
