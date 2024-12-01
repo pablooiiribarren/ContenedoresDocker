@@ -1,0 +1,25 @@
+
+# Usamos la imagen oficial de PHP con Apache
+FROM php:8.1-apache
+
+# Instalar extensiones necesarias para PHP y Apache
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    unzip \
+    mariadb-client \
+    && docker-php-ext-install pdo_mysql mysqli
+
+# Habilitamos módulos de Apache (opcional: mod_rewrite para URLs amigables)
+RUN a2enmod rewrite
+
+# Copiamos la carpeta de tu sitio web al directorio de Apache (opcional si no usas volúmenes)
+# COPY ./html /var/www/html
+
+# Configuramos permisos para el directorio
+RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
+
+# Exponemos el puerto 80 del contenedor
+EXPOSE 80
+
+# Comando para iniciar Apache
+CMD ["apache2-foreground"]
