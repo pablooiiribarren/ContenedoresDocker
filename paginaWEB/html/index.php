@@ -5,7 +5,7 @@ include 'db.php';
 
 // Consulta para obtener los proyectos
 $sql = "SELECT * FROM proyectos";
-$result = $conn->query($sql);
+$result = $conexion->query($sql);
 ?>
 
 <!DOCTYPE html>
