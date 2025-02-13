@@ -1,4 +1,4 @@
-apartment4vtest-- --------------------------------------------------------
+-- --------------------------------------------------------
 -- Host:                         awseb-e-86ixkzibzj-stack-awsebrdsdatabase-yp7cf4g45dyt.cxjisw65ztsw.us-east-1.rds.amazonaws.com
 -- Versión del servidor:         8.0.39 - Source distribution
 -- SO del servidor:              Linux
@@ -17,7 +17,7 @@ apartment4vtest-- --------------------------------------------------------
 
 -- Volcando estructura de base de datos para apartment4V
 CREATE DATABASE IF NOT EXISTS `apartment4v` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `apartment4V`;
+USE `apartment4v`;
 
 -- Volcando estructura para tabla apartment4V.apartment
 CREATE TABLE IF NOT EXISTS `apartment` (
